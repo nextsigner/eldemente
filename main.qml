@@ -251,7 +251,7 @@ ApplicationWindow {
                     w:parent.width*0.9
                     anchors.horizontalCenter: parent.horizontalCenter
                     h: w
-                    t: "\uf49e"
+                    t: "\uf055"
                     d: 'Más aplicaciones Unik'
                     c: '#333'
                     b: '#fff'
