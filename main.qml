@@ -202,8 +202,8 @@ ApplicationWindow {
                     anchors.horizontalCenter: parent.horizontalCenter
                     opacity: enabled ?1.0:0.5
                     h: w
-                    t: modwvtt.url.indexOf("https://twitter.com/hashtag/RickyPapiNavegadorWeb?src=hash")===0?"\uf086":"\uf0ac"
-                    d: 'Leer todas las pelotudeces que dicen de este #RickyPapiNavegadorWeb'
+                    t: modwvtt.url.indexOf("https://twitter.com/hashtag/ElDementeNavegadorWeb?src=hash")===0?"\uf086":"\uf0ac"
+                    d: 'Leer todas las pelotudeces que dicen de este #ElDementeNavegadorWeb'
 
                     a: appSettings.red===4
                     c: a?'white':'green'
