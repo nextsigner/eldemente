@@ -212,7 +212,7 @@ ApplicationWindow {
                     r:app.fs*0.2
 
                     onClicking: {
-                        modwvinfo.url = "https://twitter.com/hashtag/RickyPapiNavegadorWeb?src=hash"
+                        modwvinfo.url = "https://twitter.com/hashtag/ElDementeNavegadorWeb?src=hash"
                         appSettings.red=4;
                     }
                 }
