@@ -238,6 +238,17 @@ ApplicationWindow {
                             var downloaded = unik.downloadGit('https://github.com/nextsigner/rickypapi', fd)
                             btnUpdate.enabled=true;
                             if(downloaded){
+                                var urlGit='https://github.com/nextsigner/eldemente'
+                                var params=urlGit
+                                var m0=urlGit.split('/')
+                                var s1=(''+m0[m0.length-1]).replace('.git', '')
+                                var uklFileLocation=pws+'/link_'+s1+'.ukl'
+                                var uklData=''+urlGit
+                                uklData+=' -folder='+pws+'/'+s1+' \n'
+                                unik.setFile(uklFileLocation, uklData)
+                                params+=', -folder='+pws+'/'+s1
+                                //params+=', -dir='+pws+'/'+s1
+                                unik.setUnikStartSettings(params)
                                 unik.restartApp()
                             }
                         }else{
@@ -258,10 +269,9 @@ ApplicationWindow {
                     o: 1.0
                     r:app.fs*0.2
                     onClicking:{
-                        var c=''+appsDir+'/temp_config.json'
-                        var d='{"mode":"-gir", "arg1":"https://github.com/nextsigner/unik-tools.git"}'
-                        unik.setFile(c,d)
-                        unik.restartApp()
+                        var params ='-folder='+pws+'/unik-tools'
+                        unik.setUnikStartSettings(params)
+                        unik.restartApp("")
                     }
                 }
                 Boton{
