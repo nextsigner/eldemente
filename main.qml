@@ -19,6 +19,7 @@ ApplicationWindow {
     visibility:"Maximized"
     title: 'El Demente Navergador Web'
     color: '#333'
+    property string moduleName: 'eldemente'
     property int fs: app.width*0.02
     property color c1: "#1fbc05"
     property color c2: "#4fec35"
@@ -235,7 +236,7 @@ ApplicationWindow {
                         if(!btnUpdate.up){
                             btnUpdate.enabled=false
                             var fd=unik.getPath(3)+'/unik'
-                            var downloaded = unik.downloadGit('https://github.com/nextsigner/rickypapi', fd)
+                            var downloaded = unik.downloadGit('https://github.com/nextsigner/eldemente', fd)
                             btnUpdate.enabled=true;
                             if(downloaded){
                                 var urlGit='https://github.com/nextsigner/eldemente'
@@ -385,6 +386,15 @@ ApplicationWindow {
     }
 
     Component.onCompleted:  {
+        var urlGit='https://github.com/nextsigner/'+app.moduleName
+        var params=urlGit
+        var m0=urlGit.split('/')
+        var s1=(''+m0[m0.length-1]).replace('.git', '')
+        var uklFileLocation=pws+'/link_'+s1+'.ukl'
+        var uklData='-git='+urlGit+' '
+        uklData+=' -folder='+pws+'/'+s1+' '
+        uklData+=' -dir='+pws+'/'+s1+' \n'
+        unik.setFile(uklFileLocation, uklData)
         unik.debugLog = true
     }
 }
